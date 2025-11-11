@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: Cambia estas etiquetas según tu contenido -->
+    <title>MASTER PACK - Sublima y Emprende | Curso Completo de Sublimación, DTF y Vinilo</title>
+    <meta name="description"
+        content="Aprende sublimación, DTF y vinilo textil desde cero. Curso completo + calculadora + 1000 diseños exclusivos. Transforma tu creatividad en ingresos reales.">
+    <meta name="keywords"
+        content="sublimación, DTF, vinilo textil, curso sublimación, emprendimiento creativo, diseños sublimación">
+
+    <!-- Favicon: Reemplaza con tu icono -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        /* ============================================
+           ESTILOS GENERALES Y RESET
+        ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           SECCIÓN HERO - Pantalla Principal
+           Cambia el fondo, textos y colores aquí
+        ============================================ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de partículas doradas en el fondo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle, #FFD700 1px, transparent 1px),
+                radial-gradient(circle, #FFD700 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            opacity: 0.1;
+            animation: particlesMove 20s linear infinite;
+        }
+
+        @keyframes particlesMove {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(50px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Logo en el hero - Cambia "logo.png" por tu imagen */
+        .hero-logo {
+            width: 150px;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Título principal - Edita el texto en el HTML */
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: #FFD700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Subtítulo - Edita el texto en el HTML */
+        .hero p {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           BOTONES CTA (Call To Action)
+           Cambia colores, textos y enlaces en el HTML
+        ============================================ */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+        }
+
+        /* ============================================
+           SECCIÓN DE BENEFICIOS
+           Edita los iconos y textos en el HTML
+        ============================================ */
+        .benefits {
+            padding: 80px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .benefits h2 {
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .benefits .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           SECCIÓN BONO (1000 Diseños)
+           Cambia fondo y textos aquí
+        ============================================ */
+        .bonus {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bonus::before {
+            content: '🎁';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bonus-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .bonus h2 {
+            font-size: 2.8rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .bonus p {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .bonus-items {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .bonus-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* ============================================
+           SECCIÓN DE PRUEBA SOCIAL
+           Edita testimonios en el HTML
+        ============================================ */
+        .social-proof {
+            padding: 80px 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .social-proof h2 {
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #FFD700;
+        }
+
+        .testimonial .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial .name {
+            color: #000;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* ============================================
+           SECCIÓN DE URGENCIA CON TEMPORIZADOR
+           El contador se reinicia cada 24 horas automáticamente
+        ============================================ */
+        .urgency {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .urgency h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .urgency p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        /* Estilo del temporizador */
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .timer-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .timer-box .number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .timer-box .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* ============================================
+           SECCIÓN DE GARANTÍA
+           Edita textos de confianza aquí
+        ============================================ */
+        .guarantee {
+            padding: 80px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .guarantee h2 {
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .guarantee p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 20px 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           FOOTER - Pie de página
+           Cambia el texto y año aquí
+        ============================================ */
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        /* ============================================
+           ANIMACIONES
+        ============================================ */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           RESPONSIVE - Diseño móvil
+        ============================================ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1rem;
+            }
+
+            .benefits h2,
+            .social-proof h2,
+            .guarantee h2 {
+                font-size: 1.8rem;
+            }
+
+            .bonus h2,
+            .urgency h2 {
+                font-size: 2rem;
+            }
+
+            .timer-box .number {
+                font-size: 2rem;
+            }
+
+            .timer {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================
+         SECCIÓN HERO - PANTALLA PRINCIPAL
+         Edita: título, subtítulo, enlace del botón
+    ============================================ -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Logo: Cambia "logo.png" por tu imagen -->
+            <img src="logo.png" alt="Logo DIRCO" class="hero-logo">
+
+            <!-- Título principal: Edita el texto aquí -->
+            <h1>
+                Transforma tu creatividad en <span class="highlight">ingresos reales</span> con el MASTER PACK Sublima &
+                Emprende
+            </h1>
+
+            <!-- Subtítulo: Edita la promesa de valor -->
+            <p>
+                Aprende sublimación, DTF y vinilo textil desde cero. Incluye curso completo, calculadora profesional,
+                plantillas y <strong>más de 1.000 diseños exclusivos</strong> como bono.
+            </p>
+
+            <!-- Botón CTA: Cambia el texto y/o enlace si es necesario -->
+            <a href="https://pay.hotmart.com/P102788628U?checkoutMode=6&off=zz9scfgr&offDiscount=DIAMASTER&bid=1762867660707"
+                target="_blank" class="cta-button">
+                ¡QUIERO MI MASTER PACK AHORA!
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN DE BENEFICIOS Y VALOR
+         Edita: iconos, títulos y descripciones
+    ============================================ -->
+    <section class="benefits">
+        <h2>Lo que obtienes con el MASTER PACK</h2>
+        <p class="subtitle">
+            No es solo un curso, es tu puerta de entrada al mundo del emprendimiento creativo.
+        </p>
+
+        <div class="benefits-grid">
+            <!-- Beneficio 1: Edita emoji, título y texto -->
+            <div class="benefit-card">
+                <div class="icon">🎓</div>
+                <h3>Curso Completo en Video</h3>
+                <p>Aprende paso a paso sublimación, DTF y vinilo textil con clases prácticas y fáciles de seguir, sin
+                    importar tu nivel de experiencia.</p>
+            </div>
+
+            <!-- Beneficio 2: Edita emoji, título y texto -->
+            <div class="benefit-card">
+                <div class="icon">🧮</div>
+                <h3>Calculadora Profesional</h3>
+                <p>Herramienta exclusiva para calcular precios de manera profesional y rentable. Nunca más vendas por
+                    debajo de tu costo.</p>
+            </div>
+
+            <!-- Beneficio 3: Edita emoji, título y texto -->
+            <div class="benefit-card">
+                <div class="icon">🎨</div>
+                <h3>1000+ Diseños Exclusivos</h3>
+                <p>Bono gratuito con más de 1.000 diseños listos para sublimar en mugs, camisetas, gorras, termos y más.
+                    Empieza a vender desde el día 1.</p>
+            </div>
+
+            <!-- Beneficio 4: Edita emoji, título y texto -->
+            <div class="benefit-card">
+                <div class="icon">📘</div>
+                <h3>Ebooks y Guías Premium</h3>
+                <p>Material de apoyo completo para escalar tu negocio: marketing, redes sociales, proveedores confiables
+                    y estrategias de venta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN BONO EXCLUSIVO (1000 Diseños)
+         Edita: textos y elementos visuales
+    ============================================ -->
+    <section class="bonus">
+        <div class="bonus-content">
+            <h2>🎁 Bono Exclusivo de Lanzamiento</h2>
+            <p>
+                Por tu compra, recibes <strong>completamente GRATIS más de 1.000 diseños profesionales</strong> listos
+                para sublimar y empezar a generar ingresos inmediatamente.
+            </p>
+
+            <!-- Lista de productos que puedes crear -->
+            <div class="bonus-items">
+                <div class="bonus-item">☕ Mugs y Tazas</div>
+                <div class="bonus-item">👕 Camisetas</div>
+                <div class="bonus-item">🧢 Gorras</div>
+                <div class="bonus-item">🥤 Termos</div>
+                <div class="bonus-item">🎒 Mochilas</div>
+                <div class="bonus-item">📱 Cases</div>
+            </div>
+
+            <!-- Botón CTA en sección bono -->
+            <a href="https://pay.hotmart.com/P102788628U?checkoutMode=6&off=zz9scfgr&offDiscount=DIAMASTER&bid=1762867660707"
+                target="_blank" class="cta-button">
+                ¡RECLAMAR MI BONO AHORA!
+            </a>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN DE PRUEBA SOCIAL
+         Edita: testimonios, nombres y comentarios
+    ============================================ -->
+    <section class="social-proof">
+        <h2>Lo que dicen nuestros estudiantes</h2>
+
+        <div class="testimonials">
+            <!-- Testimonio 1: Edita nombre y comentario -->
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Nunca pensé que podría emprender desde casa. Gracias al MASTER PACK, ahora tengo mi propio negocio
+                    de sublimación y genero ingresos constantes. ¡Lo recomiendo 100%!"</p>
+                <p class="name">- María González</p>
+            </div>
+
+            <!-- Testimonio 2: Edita nombre y comentario -->
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Los diseños que incluyen son increíbles. Empecé a vender desde la primera semana. La calculadora me
+                    ayudó a fijar precios justos y rentables. ¡Vale cada peso!"</p>
+                <p class="name">- Carlos Ramírez</p>
+            </div>
+
+            <!-- Testimonio 3: Edita nombre y comentario -->
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Como principiante, me asustaba la idea de aprender sublimación. Pero este curso es tan claro y
+                    completo que en pocas semanas ya estaba produciendo mis propios diseños."</p>
+                <p class="name">- Ana Martínez</p>
+            </div>
+        </div>
+
+        <!-- Frase de impacto -->
+        <p style="margin-top: 50px; font-size: 1.3rem; color: #000; font-weight: 600;">
+            ⚡ Más de 500 emprendedores ya transformaron su talento con este sistema
+        </p>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN DE URGENCIA CON TEMPORIZADOR
+         El contador se maneja automáticamente en JavaScript
+    ============================================ -->
+    <section class="urgency">
+        <h2>⏳ Oferta de Lanzamiento por Tiempo Limitado</h2>
+        <p>Esta oferta especial termina en:</p>
+
+        <!-- Temporizador: Se actualiza automáticamente -->
+        <div class="timer">
+            <div class="timer-box">
+                <span class="number" id="hours">23</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="timer-box">
+                <span class="number" id="minutes">59</span>
+                <span class="label">Minutos</span>
+            </div>
+            <div class="timer-box">
+                <span class="number" id="seconds">59</span>
+                <span class="label">Segundos</span>
+            </div>
+        </div>
+
+        <!-- Botón CTA con urgencia -->
+        <a href="https://pay.hotmart.com/P102788628U?checkoutMode=6&off=zz9scfgr&offDiscount=DIAMASTER&bid=1762867660707"
+            target="_blank" class="cta-button">
+            ¡APROVECHAR OFERTA AHORA!
+        </a>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN DE GARANTÍA Y CONFIANZA
+         Edita: textos de seguridad y respaldo
+    ============================================ -->
+    <section class="guarantee">
+        <h2>🛡️ Compra 100% Segura</h2>
+        <p>
+            Tienes el respaldo total de <strong>Hotmart</strong>, la plataforma de pagos digitales más confiable de
+            Latinoamérica. Pagos seguros, cifrados y acceso inmediato después de tu compra.
+        </p>
+
+        <div class="guarantee-badge">
+            ✅ Acceso instantáneo al contenido completo
+        </div>
+
+        <p style="color: #000; font-weight: 600; margin-bottom: 40px;">
+            Empieza a transformar tu talento creativo en un negocio rentable desde hoy mismo.
+        </p>
+
+        <!-- Último CTA grande -->
+        <a href="https://pay.hotmart.com/P102788628U?checkoutMode=6&off=zz9scfgr&offDiscount=DIAMASTER&bid=1762867660707"
+            target="_blank" class="cta-button">
+            ¡SÍ, QUIERO COMENZAR AHORA!
+        </a>
+    </section>
+
+    <!-- ============================================
+         FOOTER - PIE DE PÁGINA
+         Edita: año, nombre de la empresa
+    ============================================ -->
+    <footer>
+        <p>© 2025 DIRCO – The Creative Team. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT - TEMPORIZADOR DE 24 HORAS
+         Se reinicia automáticamente cada día
+    ============================================ -->
+    <script>
+        // Función del temporizador de cuenta regresiva
+        function initTimer() {
+            // Obtener elementos del DOM
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            // Calcular el tiempo final (24 horas desde ahora)
+            const now = new Date().getTime();
+            const endTime = now + (24 * 60 * 60 * 1000); // 24 horas en milisegundos
+
+            // Guardar el tiempo final en localStorage para que persista entre recargas
+            if (!localStorage.getItem('timerEndTime')) {
+                localStorage.setItem('timerEndTime', endTime);
+            }
+
+            // Función que actualiza el temporizador cada segundo
+            function updateTimer() {
+                const currentTime = new Date().getTime();
+                const savedEndTime = parseInt(localStorage.getItem('timerEndTime'));
+                const timeRemaining = savedEndTime - currentTime;
+
+                // Si el tiempo terminó, reiniciar para otras 24 horas
+                if (timeRemaining <= 0) {
+                    const newEndTime = currentTime + (24 * 60 * 60 * 1000);
+                    localStorage.setItem('timerEndTime', newEndTime);
+                    return;
+                }
+
+                // Calcular horas, minutos y segundos restantes
+                const hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                // Actualizar el HTML con los valores (añadir cero a la izquierda si es menor a 10)
+                hoursEl.textContent = hours.toString().padStart(2, '0');
+                minutesEl.textContent = minutes.toString().padStart(2, '0');
+                secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+
+            // Actualizar inmediatamente
+            updateTimer();
+
+            // Actualizar cada segundo
+            setInterval(updateTimer, 1000);
+        }
+
+        // Iniciar el temporizador cuando la página cargue
+        window.addEventListener('DOMContentLoaded', initTimer);
+
+        // Animación de entrada suave para elementos al hacer scroll
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.benefit-card, .testimonial, .bonus-content');
+
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Configurar estilos iniciales para la animación
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.benefit-card, .testimonial, .bonus-content');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease-out';
+            });
+
+            // Activar animaciones al hacer scroll
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Ejecutar una vez al cargar
+        });
+    </script>
+
+</body>
+
+</html>
