@@ -797,11 +797,23 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
             window.addEventListener('scroll', revealOnScroll);
             revealOnScroll(); // Ejecutar una vez al cargar
         });
+
+        
     </script>
+    <script>
+document.querySelectorAll('.cta-button').forEach(button => {
+  button.addEventListener('click', () => {
+    ttq.track('ClickButton', {
+      content_name: 'Botón Comprar Master Pack'
+    });
+  });
+});
+</script>
 
 </body>
 
 
 </html>
+
 
 
